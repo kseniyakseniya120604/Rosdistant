@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <persistence-unit name="AptekaPU" transaction-type="JTA">
+        <!-- JTA data source, созданный в GlassFish на основе JDBC-пула
+             соединений (см. отчёт по заданию 4, шаг "Создание пула соединений") -->
+        <jta-data-source>jdbc/AptekaPool</jta-data-source>
+
+        <class>ru.apteka.model.Medicine</class>
+
+        <properties>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+            <property name="eclipselink.logging.level" value="INFO"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
